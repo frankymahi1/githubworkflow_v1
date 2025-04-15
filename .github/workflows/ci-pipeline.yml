@@ -16,8 +16,10 @@ on:
           - nas_to_azure
           - s3_to_azure
           - sybase_to_azure
-          - HDFS_to_Azure
-          - REST_API_to_Azure
+          - hdfs_to_azure
+          - rest_api_to_azure
+          - promotions
+          - data_controls
 
       component:
         description: "Select components to execute"
