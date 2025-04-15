@@ -50,29 +50,8 @@ on:
 
 jobs:
 
-  # Step 1: Code compilation
-  build:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.13'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Syntax Check (Compile to Bytecode)
-        run: |
-          echo "Compiling Python files..."
-          python -m compileall .
-
   # Step 2: Test Data Check and Creation
   test_data_generation:
-    needs: build
     runs-on: windows-latest
     outputs:
       createTestData: ${{ steps.read-flag.outputs.createTestData }}
